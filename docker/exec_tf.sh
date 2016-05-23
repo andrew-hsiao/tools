@@ -35,5 +35,5 @@ if [[ "${DEVICES}" = "" ]]; then
 fi
 
 export LIB_MODULES=$(\uname -r | xargs -I{} echo '-v /lib/modules/{}:/lib/modules/{}')
-docker run -it $CUDA_SO $LIB_MODULES $DEVICES -p 8891:8888 -p 6009:6006 --privileged -v /home/andrew/dev/space:/space -v /dev/usb:/dev/usb "$@"
+docker run -it $CUDA_SO $LIB_MODULES $DEVICES -p 8891:8888 -p 6009:6006 --privileged -v /home/andrew/dev/space:/space -v /dev/bus/usb:/dev/bus/usb "$@"
 
